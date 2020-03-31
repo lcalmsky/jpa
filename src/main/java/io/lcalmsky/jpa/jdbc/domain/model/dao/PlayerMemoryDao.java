@@ -1,0 +1,24 @@
+package io.lcalmsky.jpa.jdbc.domain.model.dao;
+
+import io.lcalmsky.jpa.jdbc.domain.model.dto.Player;
+
+import java.util.Map;
+
+public class PlayerMemoryDao implements PlayerDao {
+    private final Map<Long, Player> internalMap;
+
+    public PlayerMemoryDao(Map<Long, Player> internalMap) {
+        this.internalMap = internalMap;
+    }
+
+
+    @Override
+    public Player findPlayerById(Long id) {
+        return internalMap.get(id);
+    }
+
+    @Override
+    public void savePlayer(Player player) {
+        internalMap.put(player.getId(), player);
+    }
+}
