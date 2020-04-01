@@ -1,6 +1,6 @@
-package io.lcalmsky.jpa.jdbc.domain.model.dao;
+package io.lcalmsky.jpa.background.jdbc.domain.dao;
 
-import io.lcalmsky.jpa.jdbc.domain.model.dto.Player;
+import io.lcalmsky.jpa.background.jdbc.domain.dto.Player;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.*;

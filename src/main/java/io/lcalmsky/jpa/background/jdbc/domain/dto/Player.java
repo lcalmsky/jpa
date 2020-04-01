@@ -1,4 +1,4 @@
-package io.lcalmsky.jpa.jdbc.domain.model.dto;
+package io.lcalmsky.jpa.background.jdbc.domain.dto;
 
 import lombok.Data;
 

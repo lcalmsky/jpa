@@ -1,6 +1,6 @@
-package io.lcalmsky.jpa.jdbc.domain.model.dao;
+package io.lcalmsky.jpa.background.jdbc.domain.dao;
 
-import io.lcalmsky.jpa.jdbc.domain.model.dto.Player;
+import io.lcalmsky.jpa.background.jdbc.domain.dto.Player;
 
 import java.util.Map;
 
