@@ -1,4 +1,4 @@
-package io.lcalmsky.jpa.background.paradigm.domain;
+package io.lcalmsky.jpa.background.paradigm.domain.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

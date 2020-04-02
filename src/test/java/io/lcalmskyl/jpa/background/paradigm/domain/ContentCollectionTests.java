@@ -1,8 +1,8 @@
 package io.lcalmskyl.jpa.background.paradigm.domain;
 
-import io.lcalmsky.jpa.background.paradigm.domain.Book;
-import io.lcalmsky.jpa.background.paradigm.domain.Content;
-import io.lcalmsky.jpa.background.paradigm.domain.Music;
+import io.lcalmsky.jpa.background.paradigm.domain.model.Book;
+import io.lcalmsky.jpa.background.paradigm.domain.model.Content;
+import io.lcalmsky.jpa.background.paradigm.domain.model.Music;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
