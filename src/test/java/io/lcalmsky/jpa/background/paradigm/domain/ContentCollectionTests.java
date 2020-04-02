@@ -1,4 +1,4 @@
-package io.lcalmskyl.jpa.background.paradigm.domain;
+package io.lcalmsky.jpa.background.paradigm.domain;
 
 import io.lcalmsky.jpa.background.paradigm.domain.model.Book;
 import io.lcalmsky.jpa.background.paradigm.domain.model.Content;
