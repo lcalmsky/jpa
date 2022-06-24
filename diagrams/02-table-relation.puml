@@ -1,0 +1,16 @@
+@startuml
+
+entity Member {
+  * id
+  teamId
+  name
+}
+
+entity Team {
+  * id
+  name
+}
+
+Member }o--r--o| Team
+
+@enduml
