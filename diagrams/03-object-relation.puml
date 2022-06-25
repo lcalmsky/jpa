@@ -1,0 +1,14 @@
+@startuml
+
+class Member {
+  id
+  Team
+  name
+}
+
+class Team {
+  id
+  name
+}
+
+@enduml
