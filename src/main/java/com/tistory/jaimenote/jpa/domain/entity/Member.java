@@ -3,13 +3,17 @@ package com.tistory.jaimenote.jpa.domain.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@ToString
 public class Member {
 
   @Id
@@ -18,7 +22,9 @@ public class Member {
 
   private String name;
 
-  private Long teamId;
+  @ManyToOne
+  @JoinColumn(name = "team_id")
+  private Team team;
 
   private Member(String name) {
     this.name = name;
@@ -28,8 +34,7 @@ public class Member {
     return new Member(name);
   }
 
-  public Member withTeamId(Long teamId) {
-    this.teamId = teamId;
-    return this;
+  public void join(Team team) {
+    this.team = team;
   }
 }
