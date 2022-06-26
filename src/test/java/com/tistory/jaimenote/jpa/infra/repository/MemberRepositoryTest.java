@@ -38,4 +38,13 @@ class MemberRepositoryTest {
       System.out.println(member);
     }
   }
+
+  @Test
+  void findMemberByTeam() {
+    List<Team> teams = teamRepository.findAll();
+    for (Team team : teams) {
+      System.out.println(team);
+      System.out.println(team.getMembers());
+    }
+  }
 }
