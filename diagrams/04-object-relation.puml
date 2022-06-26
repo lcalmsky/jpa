@@ -1,0 +1,17 @@
+@startuml
+
+class Member {
+  Long id
+  Team team
+  String name
+}
+
+class Team {
+  Long id
+  String name
+  List<Member> members
+}
+
+Member "*" <-D-> "0..1" Team
+
+@enduml
