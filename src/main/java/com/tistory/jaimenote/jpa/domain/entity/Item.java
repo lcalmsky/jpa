@@ -1,38 +1,28 @@
 package com.tistory.jaimenote.jpa.domain.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import lombok.ToString.Exclude;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
-public class Team {
-
+public class Item {
   @Id
   @GeneratedValue
+  @Column(name = "item_id")
   private Long id;
 
   private String name;
 
-  @OneToMany(mappedBy = "team")
-  @Exclude
-  private List<Member> members = new ArrayList<>();
+  private Integer price;
 
-  private Team(String name) {
-    this.name = name;
-  }
+  private Integer stockQuantity;
 
-  public static Team withName(String name) {
-    return new Team(name);
-  }
 }
