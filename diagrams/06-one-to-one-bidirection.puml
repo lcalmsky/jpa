@@ -11,6 +11,7 @@ class Seat {
   id: Long
   --
   seatNumber: String
+  member: Member
 }
 
 Member --r--> "seat" Seat

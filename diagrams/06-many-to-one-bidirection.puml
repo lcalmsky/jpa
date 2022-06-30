@@ -11,6 +11,7 @@ class Team {
   id: Long
   --
   name: String
+  members: List<Member>
 }
 
 Member "*" --d-> "team" Team

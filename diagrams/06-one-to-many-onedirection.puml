@@ -3,7 +3,6 @@
 class Member {
   id: Long
   --
-  team: Team
   name: String
 }
 
@@ -11,6 +10,7 @@ class Team {
   id: Long
   --
   name: String
+  members: List<Member>
 }
 
 Team -d-> "members *" Member
