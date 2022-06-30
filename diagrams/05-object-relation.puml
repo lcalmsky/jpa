@@ -1,0 +1,43 @@
+@startuml
+
+class member {
+  id: Long
+  --
+  name: String
+  city: String
+  street: String
+  zipcode: String
+  orders: List<Order>
+}
+
+class orders {
+  order_id: Long
+  --
+  member: Member
+  orderItems: List<OrderItem>
+  orderDateTime: LocalDateTime
+  status: OrderStatus
+}
+
+class order_item {
+  id: Long
+  --
+  order: Order
+  item: Item
+  orderPrice: Integer
+  count: Integer
+}
+
+class item {
+  id: Long
+  --
+  name: String
+  price: Integer
+  stockQuantity: Integer
+}
+
+member "1" -d- "*" orders
+orders "1" -r- "*" order_item
+order_item "*" -r- "1" item
+
+@enduml

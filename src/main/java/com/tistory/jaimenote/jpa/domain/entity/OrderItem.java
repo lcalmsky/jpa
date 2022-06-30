@@ -1,39 +1,37 @@
 package com.tistory.jaimenote.jpa.domain.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import lombok.ToString.Exclude;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
-public class Member {
+public class OrderItem {
 
   @Id
   @GeneratedValue
-  @Column(name = "member_id")
+  @Column(name = "order_item_id")
   private Long id;
 
-  private String name;
+  @ManyToOne
+  @JoinColumn(name = "order_id")
+  private Order order;
 
-  private String city;
+  @ManyToOne
+  @JoinColumn(name = "item_id")
+  private Item item;
 
-  private String street;
+  private Integer orderPrice;
 
-  private String zipcode;
-
-  @OneToMany(mappedBy = "member")
-  @Exclude
-  private List<Order> orders = new ArrayList<>();
+  private Integer count;
 
 }
