@@ -1,0 +1,25 @@
+@startuml
+
+entity member {
+  * member_id
+  --
+  * name
+}
+
+entity member_study {
+  * member_id <<PK, FK>>
+  * study_id <<PK, FK>>
+  --
+}
+
+entity study {
+  * study_id
+  --
+  * name
+}
+
+member ||-{ member_study
+member_study }-|| study
+
+
+@enduml

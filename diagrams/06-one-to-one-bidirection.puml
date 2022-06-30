@@ -1,0 +1,19 @@
+@startuml
+
+class Member {
+  id: Long
+  --
+  seat: Seat
+  name: String
+}
+
+class Seat {
+  id: Long
+  --
+  seatNumber: String
+}
+
+Member --r--> "seat" Seat
+Seat ..r..> "member" Member
+
+@enduml
