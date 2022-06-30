@@ -1,0 +1,19 @@
+@startuml
+
+class Member {
+  id: Long
+  --
+  name: String
+  studies: List<Study>
+}
+
+class Study {
+  id: Long
+  --
+  name: String
+  members: List<Member>
+}
+
+Member "*" - "*" Study
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+class Member {
+  id: Long
+  --
+  team: Team
+  name: String
+}
+
+class Team {
+  id: Long
+  --
+  name: String
+}
+
+Team -d-> "members *" Member
+
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+
+entity member {
+  * member_id <<generated>>
+  --
+  * name
+  * city
+  * street
+  * zipcode
+}
+
+entity orders {
+  * order_id <<generated>>
+  --
+  * member_id <<FK>>
+  * order_datetime
+  * status
+}
+
+entity order_item {
+  * order_item_id <<generated>>
+  --
+  * order_id <<FK>>
+  * item_id <<FK>>
+  * order_price
+  * count
+}
+
+entity item {
+  * item_id <<generated>>
+  --
+  * name
+  * price
+  * stock_quantity
+}
+
+entity delivery {
+  * delivery_id
+  --
+  * city
+  * street
+  * zipcode
+  * status
+}
+
+entity category {
+  * category_id
+  --
+  * parent_category_id <<FK>>
+  * name
+}
+
+entity category_item {
+  * category_id <<FK>>
+  * item_id <<FK>>
+  --
+}
+
+member ||.d.o{ orders
+orders ||.r.|{ order_item
+order_item }|.r.|| item
+orders ||-d-|| delivery
+item ||-u-{ category_item
+category_item }-u-|| category
+
+@enduml
