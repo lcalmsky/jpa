@@ -1,0 +1,30 @@
+@startuml
+
+entity song {
+  id
+  --
+  name
+  price
+  singer
+  writer
+}
+
+entity movie {
+  id
+  --
+  name
+  price
+  director
+  actor
+}
+
+entity book {
+  id
+  --
+  name
+  price
+  author
+  isbn
+}
+
+@enduml
