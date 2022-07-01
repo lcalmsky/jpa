@@ -1,0 +1,31 @@
+@startuml
+
+class product {
+  id: Long
+  name: String
+  price: Integer
+}
+
+class song {
+  id: Long
+  singer: String
+  writer: String
+}
+
+class movie {
+  id: Long
+  director: String
+  actor: String
+}
+
+class book {
+  id: Long
+  author: String
+  isbn: String
+}
+
+product <|-d- song
+product <|-d- movie
+product <|-d- book
+
+@enduml

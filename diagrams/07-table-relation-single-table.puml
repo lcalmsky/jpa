@@ -1,0 +1,16 @@
+@startuml
+
+entity product {
+  id
+  --
+  name
+  price
+  singer
+  writer
+  director
+  actor
+  author
+  isbn
+}
+
+@enduml
