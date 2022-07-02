@@ -1,4 +1,4 @@
-package com.tistory.jaimenote.jpa.domain.entity;
+package com.tistory.jaimenote.jpa.relation.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

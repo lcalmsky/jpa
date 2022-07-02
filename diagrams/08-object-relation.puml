@@ -1,0 +1,19 @@
+@startuml
+
+class BaseEntity {
+  id: Long
+  name: String
+}
+
+class Member {
+  email: String
+}
+
+class Product {
+  price: String
+}
+
+BaseEntity <|-d- Member
+BaseEntity <|-d- Product
+
+@enduml

@@ -1,6 +1,6 @@
-package com.tistory.jaimenote.jpa.domain.entity;
+package com.tistory.jaimenote.jpa.relation.domain.entity;
 
-import com.tistory.jaimenote.jpa.domain.support.DeliveryStatus;
+import com.tistory.jaimenote.jpa.relation.domain.support.DeliveryStatus;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

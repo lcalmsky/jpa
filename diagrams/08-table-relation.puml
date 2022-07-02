@@ -1,0 +1,17 @@
+@startuml
+
+entity member {
+  * id
+  --
+  name
+  email
+}
+
+entity product {
+  * id
+  --
+  name
+  price
+}
+
+@enduml
