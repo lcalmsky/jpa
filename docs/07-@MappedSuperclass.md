@@ -1,11 +1,11 @@
 ![](https://img.shields.io/badge/spring--boot-2.7.1-red) ![](https://img.shields.io/badge/gradle-7.4.1-brightgreen) ![](https://img.shields.io/badge/java-11-blue)
  
-> 소스 코드는 [여기](https://github.com/lcalmsky/jpa) 있습니다. (commit hash: c93b796)
+> 소스 코드는 [여기](https://github.com/lcalmsky/jpa) 있습니다. (commit hash: ba15d2d)
 > ```shell
 > > git clone https://github.com/lcalmsky/jpa
-> > git checkout c93b796
+> > git checkout ba15d2d
 > ```
-> **Warning:** 이번 소스 코드는 최종 커밋 기준으로 작성되어 있어 모든 테스트 결과를 정확히 확인할 순 없으니 참고 부탁드립니다.
+> **Warning:** 최종 커밋 기준으로 작성되어 있어 모든 테스트 결과를 정확히 확인할 순 없으니 참고 부탁드립니다.
 
 ## Overview
 
