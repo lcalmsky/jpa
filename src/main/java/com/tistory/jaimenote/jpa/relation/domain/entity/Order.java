@@ -1,6 +1,6 @@
-package com.tistory.jaimenote.jpa.domain.entity;
+package com.tistory.jaimenote.jpa.relation.domain.entity;
 
-import com.tistory.jaimenote.jpa.domain.support.OrderStatus;
+import com.tistory.jaimenote.jpa.relation.domain.support.OrderStatus;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

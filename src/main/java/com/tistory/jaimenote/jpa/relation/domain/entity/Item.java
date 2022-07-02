@@ -1,4 +1,4 @@
-package com.tistory.jaimenote.jpa.domain.entity;
+package com.tistory.jaimenote.jpa.relation.domain.entity;
 
 import java.util.ArrayList;
 import java.util.List;
