@@ -1,22 +1,23 @@
 package com.tistory.jaimenote.jpa.relation.domain.entity;
 
-import com.tistory.jaimenote.jpa.domain.BaseEntity;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.ToString;
-import lombok.ToString.Exclude;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@ToString(callSuper = true)
-public class Member extends BaseEntity {
+public class Member {
 
   @Id
   @GeneratedValue
@@ -25,34 +26,34 @@ public class Member extends BaseEntity {
 
   private String name;
 
-  private String city;
+  @ElementCollection(fetch = FetchType.LAZY)
+  @CollectionTable(name = "address",
+      joinColumns = @JoinColumn(name = "member_id")
+  )
+  List<Address> addresses = new ArrayList<>();
 
-  private String street;
+  @Embeddable
+  @NoArgsConstructor(access = AccessLevel.PROTECTED)
+  public static class Address {
 
-  private String zipcode;
-
-  @OneToMany(mappedBy = "member")
-  @Exclude
-  private List<Order> orders = new ArrayList<>();
-
-  protected Member() {
-    super(LocalDateTime.now(), LocalDateTime.now());
-  }
-
-  private Member(LocalDateTime createdDate, LocalDateTime lastModifiedDate,
-      String name, String city, String street, String zipcode,
-      List<Order> orders) {
-    super(createdDate, lastModifiedDate);
-    this.name = name;
-    this.city = city;
-    this.street = street;
-    this.zipcode = zipcode;
-    this.orders = orders;
-  }
-
-  public static Member create(String name, String city, String street, String zipcode,
-      List<Order> orders) {
-    LocalDateTime now = LocalDateTime.now();
-    return new Member(now, now, name, city, street, zipcode, orders);
+    private String city;
+    private String street;
+    private String zipcode;
   }
 }
+
+//  @Embedded
+//  @AttributeOverrides({
+//      @AttributeOverride(name = "city", column = @Column(name = "HOME_CITY")),
+//      @AttributeOverride(name = "street", column = @Column(name = "HOME_STREET")),
+//      @AttributeOverride(name = "zipcode", column = @Column(name = "HOME_ZIPCODE"))
+//  })
+//  private Address homeAddress;
+//
+//  @Embedded
+//  @AttributeOverrides({
+//      @AttributeOverride(name = "city", column = @Column(name = "COMPANY_CITY")),
+//      @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STREET")),
+//      @AttributeOverride(name = "zipcode", column = @Column(name = "COMPANY_ZIPCODE"))
+//  })
+//  private Address companyAddress;
