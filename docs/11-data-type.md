@@ -1,6 +1,8 @@
 ## Overview
 
-JPA의 데이터 타입을 알아봅니다.
+JPA의 데이터 타입은 크게 엔터티 타입(Entity Type)과 값 타입(Value Type)으로 나뉩니다.
+
+각각 어떤 특징을 가지는지 알아보도록 하겠습니다.
 
 ## Entity Type
 
